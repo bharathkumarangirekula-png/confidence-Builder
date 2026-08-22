@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .perspective-500 {
+    perspective: 500px;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .translate-z-10 {
+    transform: translateZ(10px);
+  }
+  .translate-z-20 {
+    transform: translateZ(20px);
+  }
+  .translate-z-30 {
+    transform: translateZ(30px);
+  }
+  .translate-z-40 {
+    transform: translateZ(40px);
+  }
+  .translate-z-50 {
+    transform: translateZ(50px);
+  }
+
+  /* 3D Tactile Buttons */
+  .btn-3d-indigo {
+    box-shadow: 0 4px 0 #3730a3, 0 8px 16px rgba(79, 70, 229, 0.25);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-3d-indigo:hover {
+    box-shadow: 0 6px 0 #3730a3, 0 12px 20px rgba(79, 70, 229, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-3d-indigo:active {
+    box-shadow: 0 1px 0 #3730a3, 0 2px 4px rgba(79, 70, 229, 0.2);
+    transform: translateY(3px);
+  }
+
+  .btn-3d-emerald {
+    box-shadow: 0 4px 0 #065f46, 0 8px 16px rgba(16, 185, 129, 0.25);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-3d-emerald:hover {
+    box-shadow: 0 6px 0 #065f46, 0 12px 20px rgba(16, 185, 129, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-3d-emerald:active {
+    box-shadow: 0 1px 0 #065f46, 0 2px 4px rgba(16, 185, 129, 0.2);
+    transform: translateY(3px);
+  }
+
+  .btn-3d-white {
+    box-shadow: 0 4px 0 #cbd5e1, 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-3d-white:hover {
+    box-shadow: 0 6px 0 #cbd5e1, 0 12px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+  }
+  .btn-3d-white:active {
+    box-shadow: 0 1px 0 #cbd5e1, 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(3px);
+  }
+
+  .btn-3d-purple {
+    box-shadow: 0 4px 0 #581c87, 0 8px 16px rgba(168, 85, 247, 0.25);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-3d-purple:hover {
+    box-shadow: 0 6px 0 #581c87, 0 12px 20px rgba(168, 85, 247, 0.35);
+    transform: translateY(-2px);
+  }
+  .btn-3d-purple:active {
+    box-shadow: 0 1px 0 #581c87, 0 2px 4px rgba(168, 85, 247, 0.2);
+    transform: translateY(3px);
+  }
+
+  /* 3D Deep Glass Card */
+  .card-3d-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 
+      0 10px 30px -10px rgba(0, 0, 0, 0.08),
+      0 20px 40px -15px rgba(99, 102, 241, 0.08),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -2px 4px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .card-3d-dark-glass {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      0 20px 50px -10px rgba(0, 0, 0, 0.5),
+      0 0 30px -5px rgba(99, 102, 241, 0.2),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -2px 6px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  /* 3D Floating Float animation */
+  @keyframes float3d {
+    0%, 100% {
+      transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+    }
+  }
+
+  .animate-float-3d {
+    animation: float3d 5s ease-in-out infinite;
+  }
+
+  @keyframes pulse3d {
+    0%, 100% {
+      transform: scale(1) translateZ(0);
+    }
+    50% {
+      transform: scale(1.03) translateZ(15px);
+    }
+  }
+
+  .animate-pulse-3d {
+    animation: pulse3d 3s ease-in-out infinite;
+  }
+}
