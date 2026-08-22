@@ -1,0 +1,6 @@
+{
+  "name": "AI-Based Interview Anxiety Practice & Confidence Analyzer",
+  "description": "An AI-powered mock interview platform that helps students practice realistic interviews, analyze communication and confidence indicators, and receive actionable coaching.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
