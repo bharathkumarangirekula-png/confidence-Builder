@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "Stores user account information, profile settings, and target interview roles.",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "targetRole": { "type": "string" },
+        "targetDifficulty": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "email", "name"]
+    },
+    "interview_sessions": {
+      "title": "Interview Sessions",
+      "description": "Stores individual mock interview sessions, questions, speech metrics, real-time AI evaluations, and confidence scores.",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "status": { "type": "string" },
+        "config": { "type": "object" },
+        "questions": { "type": "array" },
+        "overallScore": { "type": "number" },
+        "categoryScores": { "type": "object" },
+        "confidenceAnalysis": { "type": "object" },
+        "summaryStats": { "type": "object" },
+        "createdAt": { "type": "string" },
+        "completedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "allow": {
+        "read": "request.auth != null && request.auth.uid == userId",
+        "write": "request.auth != null && request.auth.uid == userId"
+      }
+    },
+    "/interview_sessions/{sessionId}": {
+      "allow": {
+        "read": "request.auth != null && (resource == null || resource.data.userId == request.auth.uid)",
+        "create": "request.auth != null && request.resource.data.userId == request.auth.uid",
+        "update": "request.auth != null && resource.data.userId == request.auth.uid",
+        "delete": "request.auth != null && resource.data.userId == request.auth.uid"
+      }
+    }
+  }
+}
